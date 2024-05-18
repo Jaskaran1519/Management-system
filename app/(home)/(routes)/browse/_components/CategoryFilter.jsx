@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 
-const CategoryFilter = () => {
+const CategoryFilter = ({ selectedCategory }) => {
   const [activeindex, setActiveIndex] = useState(0);
   const filterOptions = [
     {
@@ -12,23 +12,23 @@ const CategoryFilter = () => {
     },
     {
       id: 2,
-      name: "React",
-      value: "react",
+      name: "TV Show",
+      value: "tvshow",
     },
     {
       id: 3,
-      name: "Next Js",
-      value: "nextjs",
+      name: "Anime",
+      value: "anime",
     },
     {
       id: 4,
-      name: "Tailwind Css",
-      value: "tailwindcss",
+      name: "Movie",
+      value: "movie",
     },
     {
       id: 5,
-      name: "Firebase",
-      value: "firebase",
+      name: "Game",
+      value: "game",
     },
   ];
   return (
@@ -36,7 +36,10 @@ const CategoryFilter = () => {
       {filterOptions.map((item, index) => (
         <button
           key={index}
-          onClick={() => setActiveIndex(index)}
+          onClick={() => {
+            setActiveIndex(index);
+            selectedCategory(item.value);
+          }}
           className={`border p-2 px-4 text-sm rounded-md hover:border-purple-800 font-semibold hover:bg-gray-50 ${
             activeindex == index
               ? "border-purple-800 bg-purple-50 text-purple-800"

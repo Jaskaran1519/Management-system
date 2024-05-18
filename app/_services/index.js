@@ -16,6 +16,7 @@ export const getCourseList = async () => {
         description
         id
         totalEpisode
+        tag
       }
     }
   `;
@@ -23,8 +24,24 @@ export const getCourseList = async () => {
   return result;
 };
 
-export const getCourseBYId = async (id) => {
-  const query = gql``;
+export const getCourseById = async (id) => {
+  const query =
+    gql`
+    query course {
+      courseList(where: { id: "` +
+    id +
+    `" }) {
+        name
+        totalEpisode
+        description
+        video {
+          url
+        }
+        youtubelink
+        id
+      }
+    }
+  `;
   const result = await request(MASTER_URL, query);
   return result;
 };

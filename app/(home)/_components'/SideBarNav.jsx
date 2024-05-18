@@ -3,8 +3,11 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { Search, layout, Mail, Shield } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 const SideBarNav = () => {
+  const router = useRouter();
+
   const menulist = [
     {
       id: 1,
@@ -22,7 +25,7 @@ const SideBarNav = () => {
       id: 3,
       name: "Upgrade",
       icon: Shield,
-      path: "/browse",
+      path: "/upgrade",
     },
     {
       id: 4,
@@ -35,7 +38,7 @@ const SideBarNav = () => {
   return (
     <div className="h-full b-hiwte border-r flex flex-col overflow-y-auto shadow-md ">
       <div className="p-5 border-b z-50">
-        <Image src="/logo.svg" width={70} height={70} />
+        <Image src="/logo.svg" width={70} height={70} alt="/" priority />
       </div>
       <div className="flex flex-col">
         {menulist.map((item, index) => (
@@ -43,7 +46,10 @@ const SideBarNav = () => {
             className={`flex gap-2 items-center p-4 px-6 text-gray-500 hover:bg-gray-100 cursor-pointer ${
               activeIndex == index ? "bg-purple-50 text-purple-800" : null
             } `}
-            onClick={() => setActiveIndex(index)}
+            onClick={() => {
+              setActiveIndex(index);
+              router.push(item.path);
+            }}
           >
             <item.icon />
             <h2>{item.name}</h2>
