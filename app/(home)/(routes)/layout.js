@@ -4,12 +4,9 @@ import Header from "../_components'/Header";
 
 const homelayout = ({ children }) => {
   return (
-    <div>
-      <div className="h-full w-64 flex flex-col fixed inset-y-0 z-50 ">
-        <SideBarNav />
-      </div>
+    <div className="overflow-hidden">
       <Header />
-      <div className="ml-64 p-5">{children}</div>
+      <div className=" p-5 z-0">{children}</div>
     </div>
   );
 };

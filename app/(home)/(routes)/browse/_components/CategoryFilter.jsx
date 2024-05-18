@@ -32,7 +32,7 @@ const CategoryFilter = ({ selectedCategory }) => {
     },
   ];
   return (
-    <div className="flex gap-5">
+    <div className="flex gap-5 overflow-x-auto scrollbar-hide w-[100vw]">
       {filterOptions.map((item, index) => (
         <button
           key={index}
@@ -40,7 +40,7 @@ const CategoryFilter = ({ selectedCategory }) => {
             setActiveIndex(index);
             selectedCategory(item.value);
           }}
-          className={`border p-2 px-4 text-sm rounded-md hover:border-purple-800 font-semibold hover:bg-gray-50 ${
+          className={`border p-1 px-5 text-sm rounded-md hover:border-purple-800 font-semibold hover:bg-gray-50  ${
             activeindex == index
               ? "border-purple-800 bg-purple-50 text-purple-800"
               : null
