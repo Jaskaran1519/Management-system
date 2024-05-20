@@ -4,7 +4,6 @@ import CategoryFilter from "./_components/CategoryFilter";
 import { getCourseList } from "../_services/index";
 import CourseList from "./_components/CourseList";
 import { Header } from "../(home)/_components'/Header";
-export const runtime = "edge";
 
 const Browse = () => {
   const [courses, setCourses] = useState([]);
