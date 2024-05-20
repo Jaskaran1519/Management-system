@@ -1,5 +1,5 @@
 import { request, gql } from "graphql-request";
-
+export const runtime = "edge";
 const MASTER_URL =
   "https://api-ap-south-1.hygraph.com/v2/" +
   process.env.NEXT_PUBLIC_HYGRAPH_KEY +
