@@ -40,10 +40,10 @@ const CategoryFilter = ({ selectedCategory }) => {
             setActiveIndex(index);
             selectedCategory(item.value);
           }}
-          className={`border p-1 px-5 text-sm text-gray-900 dark:text-white rounded-md border-gray-300 hover:border-white hover:text-white font-semibold hover:bg-gray-800  ${
+          className={`border p-1 px-5 text-sm  rounded-md border-gray-300 hover:border-white hover:text-white font-semibold hover:bg-gray-800  ${
             activeindex == index
-              ? "border-gray-800 dark:border-white bg-gray-50 text-gray-800 dark:bg-white dark:text-black"
-              : null
+              ? "border-gray-800 dark:border-white bg-[#151515] text-white dark:bg-white dark:text-black"
+              : "text-gray-900 dark:text-white"
           }`}
         >
           <h2>{item.name}</h2>

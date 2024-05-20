@@ -11,7 +11,7 @@ export const Header = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
   return (
-    <div className=" p-6 border-b flex w-full  items-center justify-between">
+    <div className=" py-6 border-b flex w-full  items-center justify-between">
       <SearchBar />
       <button
         className="mr-4 focus:outline-none text-gray-900 font-semibold hover:border-gray-900 border-gray-700 px-3 py-1 border rounded-lg z-99 hover:bg-black hover:text-white dark:text-white dark:border-white dark:hover:bg-white dark:hover:text-black duration-200"

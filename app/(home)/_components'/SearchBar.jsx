@@ -9,7 +9,7 @@ const SearchBar = () => {
       <input
         type="text"
         placeholder="Search Course"
-        className="bg-transparent outline-none"
+        className="bg-transparent outline-none max-w-[150px]"
       />
     </div>
   );
