@@ -3,7 +3,7 @@ import React from "react";
 
 const page = () => {
   return (
-    <div>
+    <div className="bg-white w-full min-h-screen dark:bg-[#151515]">
       HOme
       <UserButton afterSignOutUrl="/" />
     </div>

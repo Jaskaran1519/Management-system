@@ -22,13 +22,13 @@ const CoursePreview = ({ params }) => {
 
   return (
     courseDetail?.name && (
-      <div>
+      <div className="bg-white dark:bg-[#151515] w-full p-5 min-h-screen">
         <div className="grid grid-cols-1 md:grid-cols-3">
           <div className="col-span-2">
             <VideoPlayer videoUrl={courseDetail.video.url} />
             <CourseDetails courseDetail={courseDetail} />
           </div>
-          <div className="mx-5">
+          <div className="px-5">
             <OptionSection courseDetail={courseDetail} />
             <Membership courseDetail={courseDetail} />
           </div>

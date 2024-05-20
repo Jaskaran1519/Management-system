@@ -32,7 +32,7 @@ const CategoryFilter = ({ selectedCategory }) => {
     },
   ];
   return (
-    <div className="flex gap-5 overflow-x-auto scrollbar-hide w-[100vw]">
+    <div className="flex gap-5 overflow-x-auto scrollbar-hide mt-6 w-[100vw] bg-white dark:bg-[#151515]">
       {filterOptions.map((item, index) => (
         <button
           key={index}
@@ -40,9 +40,9 @@ const CategoryFilter = ({ selectedCategory }) => {
             setActiveIndex(index);
             selectedCategory(item.value);
           }}
-          className={`border p-1 px-5 text-sm rounded-md hover:border-purple-800 font-semibold hover:bg-gray-50  ${
+          className={`border p-1 px-5 text-sm text-gray-900 dark:text-white rounded-md border-gray-300 hover:border-white hover:text-white font-semibold hover:bg-gray-800  ${
             activeindex == index
-              ? "border-purple-800 bg-purple-50 text-purple-800"
+              ? "border-gray-800 dark:border-white bg-gray-50 text-gray-800 dark:bg-white dark:text-black"
               : null
           }`}
         >

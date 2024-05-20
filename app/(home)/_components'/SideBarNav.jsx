@@ -2,21 +2,12 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import {
-  Search,
-  layout,
-  Mail,
-  Shield,
-  Menu,
-  Cross,
-  CrossIcon,
-} from "lucide-react";
+import { Search, Mail, Shield, Box } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { UserButton, useUser } from "@clerk/nextjs";
 
-const SideBarNav = ({ isSidebarOpen, toggleSidebar }) => {
+export const SideBarNav = ({ isSidebarOpen, toggleSidebar }) => {
   const router = useRouter();
-  const [burger, setburger] = useState(false);
   const { user } = useUser();
 
   const menulist = [
@@ -29,7 +20,7 @@ const SideBarNav = ({ isSidebarOpen, toggleSidebar }) => {
     {
       id: 2,
       name: "Dashboard",
-      icon: layout,
+      icon: Box,
       path: "/dashboard",
     },
     {
@@ -73,11 +64,12 @@ const SideBarNav = ({ isSidebarOpen, toggleSidebar }) => {
           <div
             key={index}
             className={`flex gap-2 items-center p-4 px-6 text-gray-500 hover:bg-gray-100 cursor-pointer ${
-              activeIndex == index ? "bg-purple-50 text-purple-800" : null
+              activeIndex == index ? "bg-purple-50 text-gray-800" : null
             } `}
             onClick={() => {
               setActiveIndex(index);
               router.push(item.path);
+              toggleSidebar();
             }}
           >
             <item.icon />
@@ -86,7 +78,7 @@ const SideBarNav = ({ isSidebarOpen, toggleSidebar }) => {
         ))}
       </div>
       <button
-        className="underline text-right text-[1rem] p-4 hover:text-gray-700 "
+        className="underline text-right text-[1rem] p-4 hover:text-gray-700 text-gray-400 "
         onClick={toggleSidebar}
       >
         Close
